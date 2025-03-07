@@ -89,7 +89,7 @@ userSchema.methods.generateAccessToken = async function ():Promise<string> {
         process.env.ACCESS_TOKEN_SECRET as string,
         {
             // expiresIn:1
-            expiresIn:Number(process.env.ACCESS_TOKEN_EXPIRY)
+            expiresIn:Number(process.env.ACCESS_TOKEN_EXPIRY) 
         }
     )
 }

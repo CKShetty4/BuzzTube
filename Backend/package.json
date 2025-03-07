@@ -5,7 +5,6 @@
   "type": "module",
   "scripts": {
     "dev": "nodemon dist/index.js"
-    
   },
   "author": "Chandan R",
   "license": "ISC",
@@ -16,6 +15,7 @@
     "@types/cors": "^2.8.17",
     "@types/express": "^5.0.0",
     "@types/jsonwebtoken": "^9.0.8",
+    "@types/multer": "^1.4.12",
     "@types/node": "^22.13.1",
     "nodemon": "^3.1.9",
     "typescript": "^5.7.3"
