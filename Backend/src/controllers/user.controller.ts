@@ -59,14 +59,14 @@ const registerUser = asyncHandler(async (req: Request, res: Response) => {
     /* to check if the user has been created 
     this is optional because of unwanted database calls*/
 
-    const checkUser = await User.findById(createdUser._id).select("-password,-refreshToken")
+    const checkUser = await User.findById(createdUser._id).select("-password")
 
     if (!checkUser) {
         throw new ApiError(500, "Registration Failed")
     }
 
     res.status(201).json(
-        new ApiResponses(201, createdUser, "Registration Succussful")
+        new ApiResponses(201, checkUser, "Registration Succussful")
     )
 })
 
