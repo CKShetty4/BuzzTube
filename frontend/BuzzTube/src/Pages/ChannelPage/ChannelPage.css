@@ -113,3 +113,93 @@
   height: 70%;
   object-fit: contain;
 }
+
+.video-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 0.5rem;
+  padding: 1rem;
+  box-sizing: border-box;
+}
+.view-toggle-wrapper {
+    position: relative;
+    margin: 20px 0;
+    width: max-content;
+}
+
+.view-toggle-buttons {
+    position: relative;
+    display: flex;
+    background-color: #f0f0f0;
+    border-radius: 8px;
+    padding: 4px;
+    overflow: hidden;
+}
+
+/* Toggle slider background */
+.toggle-indicator {
+    position: absolute;
+    top: 4px;
+    left: 4px;
+    width: 50%;
+    height: calc(100% - 8px);
+    background-color: #d0e6ff;
+    border-radius: 6px;
+    transition: transform 0.3s ease;
+    z-index: 0;
+}
+
+/* Position the slider based on the active view */
+.toggle-indicator.card {
+    transform: translateX(100%);
+}
+.toggle-indicator.list {
+    transform: translateX(0%);
+}
+
+/* Buttons */
+.view-toggle-btn {
+    position: relative;
+    z-index: 1;
+    width: 80px;
+    padding: 10px;
+    border: none;
+    background: none;
+    cursor: pointer;
+    border-radius: 6px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: opacity 0.2s ease;
+    opacity: 0.6;
+}
+
+.view-toggle-btn.active {
+    opacity: 1;
+    font-weight: bold;
+}
+
+/* List icon: three lines */
+.list-icon div {
+    width: 20px;
+    height: 3px;
+    background-color: #333;
+    margin: 2px 0;
+    border-radius: 2px;
+}
+
+/* Card icon: 2x2 grid */
+.card-icon {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 3px;
+    width: 20px;
+    height: 20px;
+}
+
+.card-icon div {
+    width: 8px;
+    height: 8px;
+    background-color: #333;
+    border-radius: 2px;
+}
