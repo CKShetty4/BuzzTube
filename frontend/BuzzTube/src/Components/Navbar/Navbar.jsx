@@ -1,12 +1,19 @@
-// Navbar.jsx
-import React from 'react';
+import React, { useState } from 'react';
 import './Navbar.css';
 import { BuzzTubeLogo, search, uploadnav, user } from '../../assets';
 
-const Navbar = () => {
+const Navbar = ({ toggleSidebar, isSidebarOpen }) => {
   return (
     <nav className="navbar flex-div">
       <div className="nav-left flex-div">
+        <div
+          className={`hamburger ${isSidebarOpen ? 'open' : ''}`}
+          onClick={toggleSidebar}
+        >
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
         <img src={BuzzTubeLogo} alt="BuzzTube Logo" className="logo" />
       </div>
 
@@ -19,7 +26,9 @@ const Navbar = () => {
 
       <div className="nav-right flex-div">
         <img src={uploadnav} alt="Upload" className="nav-icon" />
-        <img src={user} alt="User Profile" className="nav-icon" />
+        <div className="user-icon-circle">
+          <img src={user} alt="User Profile" className="nav-icon" />
+        </div>
       </div>
     </nav>
   );

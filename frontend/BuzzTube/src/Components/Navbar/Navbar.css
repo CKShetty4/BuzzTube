@@ -1,11 +1,18 @@
 .navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 60px; /* Define this height */
   display: flex;
   justify-content: space-between;
   align-items: center;
   padding: 10px 20px;
   background-color: #ffffff;
   border-bottom: 1px solid #ddd;
+  z-index: 1000;
 }
+
 
 .flex-div {
   display: flex;
@@ -50,6 +57,61 @@
 .nav-right .nav-icon {
   width: 30px;
   height: 30px;
-  margin-left: 50px;
+  margin-left: 5px;
   cursor: pointer;
 }
+
+/* Hamburger */
+.hamburger {
+  width: 25px;
+  height: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  cursor: pointer;
+  margin-right: 15px;
+}
+
+.hamburger span {
+  height: 3px;
+  width: 100%;
+  background-color: #333;
+  border-radius: 2px;
+  transition: all 0.3s ease-in-out;
+}
+
+.hamburger.open span:nth-child(1) {
+  transform: rotate(45deg) translate(5px, 5px);
+}
+
+.hamburger.open span:nth-child(2) {
+  opacity: 0;
+}
+
+.hamburger.open span:nth-child(3) {
+  transform: rotate(-45deg) translate(5px, -5px);
+}
+
+/* User icon circle */
+/* User icon wrapper */
+.user-icon-circle {
+  width: 40px;
+  height: 40px;
+  border: 2px solid #ccc;
+  border-radius: 50%;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-left: 25px;
+  cursor: pointer;
+  background-color: #f9f9f9; /* optional placeholder bg */
+}
+
+/* Inside user icon image */
+.user-icon-circle img {
+  width: 70%;
+  height: 70%;
+  object-fit: contain;
+}
+
