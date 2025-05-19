@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import './Navbar.css';
 import { BuzzTubeLogo, search, uploadnav, user } from '../../assets';
+import { Link } from 'react-router-dom';
 
 const Navbar = ({ toggleSidebar, isSidebarOpen }) => {
   return (
@@ -14,7 +15,9 @@ const Navbar = ({ toggleSidebar, isSidebarOpen }) => {
           <span></span>
           <span></span>
         </div>
-        <img src={BuzzTubeLogo} alt="BuzzTube Logo" className="logo" />
+        <Link to="/">
+        <img src={BuzzTubeLogo} to="/" alt="BuzzTube Logo" className="logo" />
+        </Link>
       </div>
 
       <div className="nav-center flex-div">

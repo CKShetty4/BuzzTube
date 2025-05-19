@@ -1,17 +1,18 @@
+// App.jsx
 import React, { useState } from 'react';
-import { Navbar, Sidebar } from './Components';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import { Navbar, Empty, Sidebar } from './Components';
+import { ChannelPage } from './Pages';
 
 const App = () => {
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
 
-  const toggleSidebar = () => {
-    setIsSidebarOpen(prev => !prev);
-  };
+  const toggleSidebar = () => setIsSidebarOpen(prev => !prev);
 
   const SIDEBAR_WIDTH = isSidebarOpen ? 220 : 70;
 
   return (
-    <>
+    <Router>
       <Navbar toggleSidebar={toggleSidebar} isSidebarOpen={isSidebarOpen} />
 
       <div style={{ paddingTop: '60px' }}>
@@ -25,12 +26,14 @@ const App = () => {
             backgroundColor: '#f9f9f9',
           }}
         >
-          <div style={{ minHeight: '200vh' }}>
-            App Content (scrollable)
-          </div>
+          <Routes>
+            <Route path="/subscribers" element={<ChannelPage />} />
+            {/* All other paths route to Empty */}
+            <Route path="*" element={<Empty title="Nothing yet" description="Please select an option from the sidebar." />} />
+          </Routes>
         </div>
       </div>
-    </>
+    </Router>
   );
 };
 

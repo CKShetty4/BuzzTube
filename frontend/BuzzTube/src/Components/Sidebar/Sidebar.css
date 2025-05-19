@@ -58,3 +58,8 @@
   flex-direction: column;
   margin-bottom: 10px;
 }
+
+.sidebar-item-link {
+  text-decoration: none; /* removes underline */
+  color: inherit;         /* inherits text color from parent */
+}
